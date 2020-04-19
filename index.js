@@ -10,10 +10,10 @@ const admin = require('firebase-admin');
 const { uuid } = require('uuidv4');
 
 
- var serviceAccount = require("./korapp-222-firebase-adminsdk-ku7tk-12a4ec2e80.json");
+ var serviceAccount = require("./korapp-22232-firebase-adminsdk-ku7tk-12a4ec2e80.json");
  admin.initializeApp({
    credential: admin.credential.cert(serviceAccount),
-   databaseURL: "https://korapp-222.firebaseio.com"
+   databaseURL: "https://korapp-22232.firebaseio.com"
  });
 
 const firebaseConfig = {
