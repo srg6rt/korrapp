@@ -21,8 +21,8 @@ const firebaseConfig = {
     authDomain: "korapp-22232.firebaseapp.com",
     databaseURL: "https://korapp-22232.firebaseio.com",
     projectId: "korapp-22232",
-    storageBucket: "korapp-222.appspot.com",
-    messagingSenderId: "512764753218",
+    storageBucket: "korapp-22232.appspot.com",
+    messagingSenderId: "512764342218",
     appId: "1:51276454753218:web:8fb8f175591e38cfb7204db"
   };
   // Initialize Firebase
