@@ -285,29 +285,6 @@ exports.createLoginAndUsersAuthFire = functions.https.onRequest((req, res) => {
 });
 
 
-
-// exports.loginAuthFire = functions.https.onRequest((req, res) => {
-//  // const auth = firebase.auth();
-//   let email;
-//   let result;
-
-//   email = req.query.email;
-  
- // const promise = auth.signInWithEmailAndPassword(email, pass);
-//  firebase.auth().onAuthStateChanged(function(email) {
-//     if (email) {
-//       console.log(email);
-//       result = email;
-//     } else {
-//       console.log('not logged in ^__^');
-//       result = 'not logged in ^__^';
-//       }
-//   });
-
-//  res.json(result);
-// });
-
-
 //[START addEmployerTrigger]
 exports.addUserToCafe = functions.https.onRequest(async (req, res) => {
   let data = {
@@ -376,7 +353,7 @@ exports.uploadImageInBase64toStorage = functions.https.onRequest(async (req, res
 
 function makeid(length) {
    var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTwerwerwrghijklmnopqrstuvwxyz0123456789';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcghijklmnopqrstuvwxyz0123456789';
    var charactersLength = characters.length;
    for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
