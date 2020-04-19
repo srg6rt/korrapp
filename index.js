@@ -17,13 +17,13 @@ const { uuid } = require('uuidv4');
  });
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAE5gq6T3GmUuXMLu4FKkcr8Xyd_66Tz_Y",
-    authDomain: "korapp-222.firebaseapp.com",
-    databaseURL: "https://korapp-222.firebaseio.com",
-    projectId: "korapp-222",
+    apiKey: "AIzaRdsWDFXMLu4FKkcGTRsWSCeRz_Y",
+    authDomain: "korapp-22232.firebaseapp.com",
+    databaseURL: "https://korapp-22232.firebaseio.com",
+    projectId: "korapp-22232",
     storageBucket: "korapp-222.appspot.com",
     messagingSenderId: "512764753218",
-    appId: "1:512764753218:web:8fb8f17591e38cfb7204db"
+    appId: "1:51276454753218:web:8fb8f175591e38cfb7204db"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -270,31 +270,6 @@ exports.messages = functions.https.onRequest(async (req, res) => {
 });
 
 
-
-
-
-// // // --- START ----- QUERY ELEMENTS IN DATABASE----
-//  exports.loginAuthFire = functions.https.onRequest(async (req, res) => {
-
-//   // auth.signInWithEmailAndPassword(email, pass);
-
-//   //auth.createUserWithEmailAndPassword(email, pass);
-
-//   // auth.onAuthStateChanged(firebaseUser => { } );
-
-//   const promise = auth.signInWithEmailAndPassword(email, pass).then((snapshot) => {
-
-//     reqresult =  {email:`${doc.data().email}`,password:`${doc.data().email}`}; 
-
-
-//     return reqresult; // Each then() should return a value or throw Firebase cloud functions
-//   } );
-
-//   promise.catch => console.log(e.message);
-
-//   res.json(promise.catch);
-
-
 exports.createLoginAndUsersAuthFire = functions.https.onRequest((req, res) => {
   const auth = firebase.auth();
   let email;
@@ -401,7 +376,7 @@ exports.uploadImageInBase64toStorage = functions.https.onRequest(async (req, res
 
 function makeid(length) {
    var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTwerwerwrghijklmnopqrstuvwxyz0123456789';
    var charactersLength = characters.length;
    for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -434,7 +409,7 @@ function makeid(length) {
     reqresult = Object.assign({}, rowsFromDB); // Convert ['a','b','c'] to {0:"a", 1:"b", 2:"c"}
 
     return reqresult; // Each then() should return a value or throw Firebase cloud functions
-    // slice need for remove first character [ and last character ] in result [{"key":"value"}, {"key":"value"}]
+
 
   } );
   // Send back a message that we've succesfully find email (OPTIONAL)
@@ -445,130 +420,6 @@ function makeid(length) {
  
 
 
-
-// // --- START ----- QUERY ELEMENTS IN DATABASE----
-//  exports.getMenuInfo = functions.https.onRequest(async (req, res) => {
-// var photo_url, tt; 
-// let cafeMenu = db.collection('CafeMenu');
-// const allCafeMenu = await cafeMenu.get().then(snapshot => {
-//     snapshot.forEach(doc => {
-
-//       //console.log(doc.id, '=>', doc.data());
-
-//       photo_url =  doc.data().dish_photo;
-   
-//       //imageBuffer = new Buffer(decodeURIComponent(photo_url), 'hex'),
-//       // imageBufferEncoder = new Buffer(encodeURIComponent(imageBuffer.toString('base64')), 'utf8');
-   
-//       var 
-//       request         = require('request').defaults({ encoding: null });
-//     request.get(photo_url, (error, response, body) => {
-         
-//                       var  data = new Buffer(body).toString('base64');
-//                             //  console.log('data ->', data);
-//                             //  console.log('dataencodeURI ->', encodeURIComponent(data));
-//                           tt = encodeURIComponent(data);
-//                         });
-//     console.log('tt ->', tt); 
-//     });
-
-    
-//    return encodeURIComponent(tt);
-//   })
-
-//   .catch(err => {
-//     console.log('Error getting documents', err);
-//   });
- 
-
-//   res.json({photo_url: `${allCafeMenu}`});
-//     });
-// // --- END----- QUERY ELEMENTS IN DATABASE----
-
-
-
-
-
-
-
-
-
-
-
-
-   // let userExtendInfo = {imgBase64:req.query.imgBase64}; // create REST example: https://https://us.cloudfunctions.net/addEmployerAuto?j={"first_name":"Serg","last_name":"Sergio"}
- // Base64 formatted string
-//var message = '5b6p5Y+344GX44G+44GX44Gf77yB44GK44KB44Gn44Go44GG77yB';
-//ref.putString(message, 'base64').then(function(snapshot) {
- // console.log('userExtendInfo   '+ userExtendInfo);
-  //console.log('JSON.parse   '+ JSON.parse(userExtendInfo));
-//});
-
- // const writeResult = await JSON.parse(userExtendInfo); // remove first and last charachter for view "name":""
-  // Send back a message that we've succesfully written the User (OPTIONAL)
-
-
-
-
-
-
-
-
-// // This registration token comes from the client FCM SDKs.
-// var registrationToken = 'cC8IPH3yRi8:APA91bERnqRt8fNaWIDyuUPNcoglBdFwyrFhIwsHspezVT-Yc_aA4a1XAr7RdrcOFeq_jZrBiP33SAaI4Jpr8NbLPCg3PkOPcxrvkmLUOlKvZtP9oiBZyg3gGT3zaWj28OavaKbeZ-Qt';
-
-// var message = {
-//   data: {
-//     title: 'Helllo',
-//     body: 'This is message',
-//     score: '850',
-//     time: '2:45'
-//   },
-//   token: registrationToken
-// };
-
-// // Send a message to the device corresponding to the provided
-// // registration token.
-// admin.messaging().send(message)
-//   .then((response) => {
-//     // Response is a message ID string.
-//     console.log('Successfully sent message:', response);
-//   })
-//   .catch((error) => {
-//     console.log('Error sending message:', error);
-//   });
-
-
-// // EXAMPLE: https://us-central1-korapp-222.cloudfunctions.net/addMessage?email=Artur@gmail.com&password=somepass
- 
-
-// --- START DELTE ID IN DATABASE----
-
- //db.collection('usersDatabase').doc('5uzbgmN9veyH0y8k5nJD').delete();
-
-
-// --- END DELTE ID IN DATABASE----
-
-
-//--START----GET ELEMENTS FROM DATABASE------
-  // db.collection('usersDatabase').get().then((snapshot) => {
-  // 	snapshot.docs.forEach(doc => {	
-
-  // 		console.log('E-mail ' +  doc.data().email);
-  // 		console.log('Password ' +  doc.data().password);
-  // 		//console.log(doc.data())
-  // 	})//console.log(snapshot.docs);
-  // })
-//--END----GET ELEMENTS FROM DATABASE------
-
-
-
-
-//COMMANDS FOR CMD
-// firebase login
-// firebase deploy -only functions:uploadImageInBase64toStorage
-
-// // EXAMPLE: https://us-central1-korapp-222.cloudfunctions.net/addMessage?email=Artur@gmail.com&password=somepass
  
 
 
